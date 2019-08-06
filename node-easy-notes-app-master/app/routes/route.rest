@@ -1,0 +1,36 @@
+
+### POST NOTE  IN MONGO DB
+POST http://localhost:3000/notes
+content-type: application/json
+
+{
+    "productId": "P_104",
+    "title": "Bisleri",
+    "content": "This is new Product here.",
+    "price": 120,
+    "discountPrice" : 110
+}
+
+### GET ALL NOTES
+GET http://localhost:3000/notes
+
+### GET NOTES BY ID
+GET http://localhost:3000/notes/5d47d640b8128f36101ff532
+
+### UPDATE by ID
+PUT http://localhost:3000/notes/5d47f3726463391f0c709111
+content-type: application/json
+
+{
+    
+    "title": "Bisleri",
+    "content": "This is Updated Product here.",
+    "price": 100,
+    "discountPrice" : 70
+}
+
+### DELETE NOTES BY ID
+DELETE http://localhost:3000/notes/5d47f3776463391f0c709112
+
+### DELETE ALL NOTES
+DELETE http://localhost:3000/notes
