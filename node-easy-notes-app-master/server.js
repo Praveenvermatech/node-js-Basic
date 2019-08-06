@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 // create express app
 const app = express();
 
+// use public URL
+app.use(express.static('public'))
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -28,7 +31,7 @@ mongoose.connect(dbConfig.url, {
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "Welcome to E-commerce application. Take notes quickly. Organize and keep track of all your notes."});
 });
 
 require('./app/routes/note.routes.js')(app);
@@ -37,3 +40,9 @@ require('./app/routes/note.routes.js')(app);
 app.listen(3000, () => {
     console.log("Server is listening on port 3000");
 });
+
+// handle 404 
+app.use((req, res, next) => {
+    res.status(404).send('You are something went wrong.');
+});
+

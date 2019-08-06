@@ -122,6 +122,14 @@ exports.delete = (req, res) => {
     });
 };
 
-// exports.remove({},function(err, removed){
-// });
+exports.removeAll = async (req, res) => {
+    await Note.deleteMany() .then(notes => {
+        res.send(notes);
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving notes."
+        });
+    });
+};
+
 

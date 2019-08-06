@@ -17,5 +17,5 @@ module.exports = (app) => {
     app.delete('/notes/:noteId', notes.delete);
 
      // Delete all Note 
-    //  app.remove('/notes', notes.remove);
+     app.delete('/notes', notes.removeAll);
 }
