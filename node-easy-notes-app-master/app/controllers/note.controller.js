@@ -1,4 +1,8 @@
 const Note = require('../models/note.model.js');
+const express = require('express');
+const router = express.Router();
+const multer = require('multer');
+const upload = multer({dest: '/uploads/'});
 
 
 // Create and Save a new Note
@@ -133,5 +137,35 @@ exports.removeAll = async (req, res) => {
         });
     });
 };
+
+router.post("/", upload.single('productImage'), (req, res, next) => {
+    console.log(req.file);
+    const product = new Note({
+        productId: req.body.productId,
+        title: req.body.title || "Untitled Note", 
+        content: req.body.content,
+        capacity: req.body.capacity,
+        price: req.body.price,
+        discountPrice: req.body.discountPrice
+    });
+      // Save Product in the database
+      try{
+        const result  = product.save();
+        res.json(result);
+        res.status(201).json({
+            message:"Created Successfully",
+            createdProduct: {
+                title: result.title, 
+                content: result.content,
+                capacity: result.capacity,
+                price: result.price,
+                discountPrice: result.discountPrice 
+            }
+        });
+       }catch (error){
+             console.log('ERORR : '+error.message);
+             res.json(error.message);
+         }
+})
 
 
