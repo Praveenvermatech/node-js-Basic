@@ -16,7 +16,8 @@ exports.create = async (req, res) => {
         title: req.body.title || "Untitled Note", 
         content: req.body.content,
         price: req.body.price,
-        discountPrice: req.body.discountPrice
+        discountPrice: req.body.discountPrice,
+        capacity: req.body.capacity
     });
 
     // Save Note in the database
@@ -79,7 +80,8 @@ exports.update = (req, res) => {
         title: req.body.title || "Untitled Note",
         content: req.body.content,
         price: req.body.price,
-        discountPrice: req.body.discountPrice
+        discountPrice: req.body.discountPrice,
+        capacity: req.body.capacity
     }, {new: true})
     .then(note => {
         if(!note) {

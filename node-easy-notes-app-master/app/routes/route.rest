@@ -7,8 +7,10 @@ content-type: application/json
     "productId": "P_103",
     "title": "Bisleri",
     "content": "This is new Product here.",
+    "capacity": "20Lt",
     "price": 120,
     "discountPrice" : 110
+
 }
 
 ### GET ALL NOTES
@@ -24,9 +26,11 @@ content-type: application/json
 {
     
     "title": "Bisleri",
-    "content": "This is Updated Product here.",
-    "price": 100,
-    "discountPrice" : 70
+    "content": "This is new Product here.",
+    "capacity": "20Lt",
+    "price": 120,
+    "discountPrice" : 110
+
 }
 
 ### DELETE NOTES BY ID

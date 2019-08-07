@@ -5,7 +5,8 @@ const NoteSchema = mongoose.Schema({
     title: String,
     content: String,
     price : Number,
-    discountPrice: Number
+    discountPrice: Number,
+    capacity: String
 }, {
     timestamps: true
 });
