@@ -4,13 +4,12 @@ POST http://localhost:3000/notes
 content-type: application/json
 
 {
-    "productId": "P_103",
+    "productId": "P_101",
     "title": "Bisleri",
     "content": "This is new Product here.",
     "capacity": "20Lt",
-    "price": 120,
-    "discountPrice" : 110
-
+    "price": "120",
+    "discountPrice" : "110"
 }
 
 ### GET ALL NOTES
@@ -24,13 +23,11 @@ PUT http://localhost:3000/notes/5d47f3726463391f0c709111
 content-type: application/json
 
 {
-    
     "title": "Bisleri",
     "content": "This is new Product here.",
     "capacity": "20Lt",
     "price": 120,
     "discountPrice" : 110
-
 }
 
 ### DELETE NOTES BY ID
