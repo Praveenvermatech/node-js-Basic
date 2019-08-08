@@ -29,10 +29,16 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+// define default route
+app.get('/',function(req,res){
+    res.sendFile(__dirname + '/index.html');
+  
+  });
+
 // define a simple route
-app.get('/', (req, res) => {
-    res.json({"message": "Welcome to E-commerce application. Take quickly. Organize and keep track of all your notes."});
-});
+// app.get('/', (req, res) => {
+//     res.json({"message": "Welcome to E-commerce application. Take quickly. Organize and keep track of all your notes."});
+// });
 
 require('./app/routes/note.routes.js')(app);
 

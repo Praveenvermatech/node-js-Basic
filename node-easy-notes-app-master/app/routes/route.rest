@@ -4,7 +4,7 @@ POST http://localhost:3000/notes
 content-type: application/json
 
 {
-    "productId": "P_101",
+    "productId": "P_104",
     "title": "Bisleri",
     "content": "This is new Product here.",
     "capacity": "20Lt",
